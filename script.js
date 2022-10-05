@@ -10,6 +10,7 @@ let qIndex = 0;
 let aIndex = -1;
 let message;
 let points = 0;
+let pickedAnswers = [];
 
 const nextQuestionBtn = function () {
   checkCorrect();
@@ -56,15 +57,18 @@ function getNextQuestion() {
   }
 }
 
+
+
 // facit
 const showAnswers = function () {
+  facit.disabled = true;
   question.innerHTML = "";
   questionsArray.forEach((questions, i) => {
     question.innerHTML += `<h3><span>${(i + 1 < 10 ? "0" + (i + 1) : i + 1)}</span > ${questions.question}</h3 >
-  <label class="${0 == questions.correct ? "correct" : "incorrect"}"><input disabled type="radio" name="${i}" id="0">${questions.answers[0]}</label>
-  <label class="${1 == questions.correct ? "correct" : "incorrect"}"><input disabled type="radio" name="${i}" id="1">${questions.answers[1]}</label>
-  <label class="${2 == questions.correct ? "correct" : "incorrect"}"><input disabled type="radio" name="${i}" id="2">${questions.answers[2]}</label>
-  <label class="${3 == questions.correct ? "correct" : "incorrect"}"><input disabled type="radio" name="${i}" id="3">${questions.answers[3]}</label>
+  <label class="${0 == questions.correct ? "correct" : pickedAnswers[i] == 0 ? "picked" : "incorrect"}"><input disabled type="radio" name="${i}" id="0">${questions.answers[0]}</label>
+  <label class="${pickedAnswers[i]} ${1 == questions.correct ? "correct" : pickedAnswers[i] == 1 ? "picked" : "incorrect"}"><input disabled type="radio" name="${i}" id="1">${questions.answers[1]}</label>
+  <label class="${pickedAnswers[i]} ${2 == questions.correct ? "correct" : pickedAnswers[i] == 2 ? "picked" : "incorrect"}"><input disabled type="radio" name="${i}" id="2">${questions.answers[2]}</label>
+  <label class="${pickedAnswers[i]} ${3 == questions.correct ? "correct" : pickedAnswers[i] == 3 ? "picked" : "incorrect"}"><input disabled type="radio" name="${i}" id="3">${questions.answers[3]}</label>
   <p class="explanation">${questions.explanation}</p>
   <hr>
   `
@@ -83,6 +87,8 @@ const selectOption = function (id) {
 
 // is your answer correct?
 const checkCorrect = function () {
+  pickedAnswers.push(aIndex)
+
   if (aIndex == questionsArray[qIndex].correct) {
     points++;
   }
@@ -95,6 +101,7 @@ function reset() {
   facit.disabled = true;
   restart.style.display = "none";
   restart.disabled = true;
+  pickedAnswers = [];
   qIndex = 0;
   aIndex = -1;
   message = "";
