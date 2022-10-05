@@ -156,7 +156,7 @@ export default [
     "answers": [
       "<code>for (let x of y)</code>",
       "<code>for (let x in y)</code>",
-      "<code>for (let i = 0; i > 0; i++)</code>",
+      "<code>for (let i = 0; i < 5; i++)</code>",
       "<code>for (let x at y)</code>"
     ],
     "correct": 3,
