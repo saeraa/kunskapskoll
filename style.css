@@ -1,0 +1,148 @@
+body {
+  background-color: #424242;
+  color: #e7e7e7;
+  font-family: Calibri;
+  font-size: 16px;
+}
+
+#controls {
+  padding-top: 3rem;
+  display: none;
+}
+
+label {
+  display: block;
+}
+
+h1,
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+header {
+  padding: 2rem 4rem;
+  margin: auto;
+  text-align: right;
+}
+
+h2 {
+  font-family: monospace;
+  transform: translateY(-8px);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-right: 1.3rem;
+  text-decoration: underline;
+  text-underline-offset: -.85em;
+  text-decoration-color: cadetblue;
+}
+
+h3 {
+  text-shadow: 0 0px 2px black;
+  position: relative;
+}
+
+main {
+  margin: auto;
+  max-width: 600px;
+}
+
+.correct {
+  color: rgb(0, 224, 0);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.incorrect {
+  color: #7c7c7c;
+}
+
+button {
+  background-color: inherit;
+  border: 2px solid cadetblue;
+  color: #fff;
+  padding: .4rem 2rem;
+  font-family: monospace;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:disabled {
+  color: rgb(122, 122, 122);
+  cursor: not-allowed;
+  text-decoration: line-through;
+  border-color: rgb(122, 122, 122);
+}
+
+button#facit {
+  border: none;
+}
+
+header button {
+  margin-top: 1rem;
+}
+
+button:hover {
+  background-color: rgba(0 0 0 / .2);
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background-color: rgba(0 0 0 / .3);
+}
+
+code {
+  font-size: 1rem;
+  font-weight: 400;
+  background-color: rgba(0 0 0 / .2);
+  padding: 0px 5px;
+}
+
+input {
+  margin: 6px 0px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+#restart {
+  width: 80%;
+  margin: 1em auto;
+  display: none;
+}
+
+label {
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+span {
+  text-align: center;
+  font-family: monospace;
+  position: absolute;
+  left: -59px;
+  top: -4px;
+  font-size: 2rem;
+  display: inline-block;
+  padding: .2rem;
+  box-sizing: border-box;
+  margin: 0;
+  border-radius: 20%;
+  background-color: rgba(95, 158, 160, 0.783);
+  height: 46px;
+  width: 50px;
+  text-shadow: 0 0px 2px black;
+}
+
+.explanation {
+  background-color: rgba(0 0 0 / .1);
+  padding: .8rem .8rem 1rem;
+  letter-spacing: .2px;
+  line-height: 150%;
+  color: #fff;
+}
